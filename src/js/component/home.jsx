@@ -49,15 +49,8 @@ const Home = () => {
 
                     {toDos.map((item, id) =>
                         <ToDoItem key={id} label={item.label}
-                            toggle_todo={() =>
-                                settoDos(toDos.toSpliced(id, 1, {
-                                    label: item.label,
-                                    is_done: !item.is_done,
-                                }
-                                ))}
                             delete_toDo={() => settoDos(toDos.toSpliced(id, 1))}
                         />)}
-
 
                     <p><small>{toDos.length} Que haceres restantes{toDos.length == 0 ? ", agregue una tarea" : ""}</small></p>
                 </div>
